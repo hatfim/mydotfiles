@@ -1,0 +1,30 @@
+Script started on Thu Jun 27 10:46:54 2019
+[1m[7m%[27m[1m[0m                                                                                ]2;windymiftah@0x68617466696d: ~/.dotfiles]1;~/.dotfiles[0m[27m[24m[J[01;32m➜  [36m.dotfiles[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h[7mscript/bootstrap[27m
+[K[A[28C[27ms[27mc[27mr[27mi[27mp[27mt[27m/[27mb[27mo[27mo[27mt[27ms[27mt[27mr[27ma[27mp[1B[K[?1l>[?2004l
+]2;script/bootstrap]1;script/bootstrap
+  [ [00;34m..[0m ] installing dotfiles
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/vim/vimrc.symlink
+  [ [0;33m??[0m ] File already exists: /Users/windymiftah/.zshrc (zshrc.symlink), what do you want to do?
+        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?
+o[2K  [ [00;32mOK[0m ] removed /Users/windymiftah/.zshrc
+[2K  [ [00;32mOK[0m ] linked /Users/windymiftah/.dotfiles/zsh/zshrc.symlink to /Users/windymiftah/.zshrc
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/ruby/gemrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/ruby/irbrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/git/gitconfig.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/git/gitconfig.local.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/windymiftah/.dotfiles/git/gitignore.symlink
+  [ [00;34m..[0m ] installing dependencies
+  [ [00;34m..[0m ] › brew update
+  [ [00;34m..[0m ] Updated 2 taps (homebrew/core and homebrew/cask).
+  [ [00;34m..[0m ] ==> Updated Formulae
+  [ [00;34m..[0m ] circleci
+  [ [00;34m..[0m ] cointop
+  [ [00;34m..[0m ] exploitdb
+  [ [00;34m..[0m ] faas-cli
+  [ [00;34m..[0m ] haskell-stack
+  [ [00;34m..[0m ] hlint
+  [ [00;34m..[0m ] serverless
+  [ [00;34m..[0m ] › /Users/windymiftah/.dotfiles/script/install
+  [ [00;34m..[0m ] › sudo softwareupdate -i -a
+Password:
+No updates are available.
