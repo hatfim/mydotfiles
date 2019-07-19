@@ -54,62 +54,6 @@ install_cli_tools() {
   finish
 }
 
-install_homebrew() {
-  # There's not need to install Homebrew on Linux
-  if [ `uname` != 'Darwin' ]; then
-    return
-  fi
-
-  info "Trying to detect installed Homebrew..."
-
-  if ! _exists brew; then
-    echo "Seems like you don't have Homebrew installed!"
-    read -p "Do you agree to proceed with Homebrew installation? [y/N] " -n 1 answer
-    echo
-    if [ ${answer} != "y" ]; then
-      exit 1
-    fi
-
-    info "Installing Homebrew..."
-    ruby -e "$(curl -fsSL ${HOMEBREW_INSTALLER_URL})"
-    brew update
-    brew upgrade
-  else
-    success "You already have Homebrew installed. Skipping..."
-  fi
-
-  finish
-}
-
-install_git() {
-  info "Trying to detect installed Git..."
-
-  if ! _exists git; then
-    echo "Seems like you don't have Git installed!"
-    read -p "Do you agree to proceed with Git installation? [y/N] " -n 1 answer
-    echo
-    if [ ${answer} != "y" ]; then
-      exit 1
-    fi
-
-    info "Installing Git..."
-
-    if [ `uname` == 'Darwin' ]; then
-      brew install git
-    elif [ `uname` == 'Linux' ]; then
-      sudo apt-get install git
-    else
-      error "Error: Failed to install Git!"
-      exit 1
-    fi
-  else
-    success "You already have Git installed. Skipping..."
-  fi
-
-  finish
-}
-
-
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]
   then
@@ -132,46 +76,6 @@ setup_gitconfig () {
   fi
 }
 
-install_zsh() {
-  info "Trying to detect installed Zsh..."
-
-  if ! _exists zsh; then
-    echo "Seems like you don't have Zsh installed!"
-    read -p "Do you agree to proceed with Zsh installation? [y/N] " -n 1 answer
-    echo
-    if [ ${answer} != "y" ]; then
-      exit 1
-    fi
-
-    info "Installing ZSH..."
-
-    if [ `uname` == 'Darwin' ]; then
-      brew install zsh zsh-completions
-    elif [ `uname` == 'Linux' ]; then
-      sudo apt-get install zsh
-    else
-      error "Error: Failed to install Zsh!"
-      exit 1
-    fi
-  else
-    success "You already have Zsh installed. Skipping..."
-  fi
-
-  if _exists zsh; then
-    info "Setting up Zsh as default shell..."
-
-    echo "The script will ask you the password for sudo 2 times:"
-    echo
-    echo "1) When adding fish shell into /etc/shells via tee"
-    echo "2) When changing your default shell via chsh -s"
-    echo
-
-    echo "$(command -v zsh)" | sudo tee -a /etc/shells
-    chsh -s "$(command -v zsh)" || error "Error: Cannot set Zsh as default shell!"
-  fi
-
-  finish
-}
 
 link_file () {
   local src=$1 dst=$2
@@ -261,10 +165,7 @@ install_dotfiles () {
 }
 
 install_cli_tools
-install_homebrew
-install_git
 setup_gitconfig
-install_zsh
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.

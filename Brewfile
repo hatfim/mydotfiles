@@ -19,6 +19,8 @@ brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'tmux'
 brew 'trash' # Manage the Trash bin
 brew 'zlib' # Needed for Memcached
+brew 'zsh'
+brew 'zsh-completions'
 
 # Development
 brew 'beanstalk'
