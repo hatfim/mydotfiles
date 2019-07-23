@@ -34,12 +34,12 @@ brew 'mysql'
 brew 'node'
 brew 'nodenv'
 brew 'openssl'
-brew 'phantomjs'
 brew 'redis'
 brew 'yarn'
 
 
 # Apps
+cask 'phantomjs'
 cask 'aerial'
 cask 'alfred'
 cask 'caffeine'
