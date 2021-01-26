@@ -33,3 +33,7 @@
         default = simple
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = false
+[gpg]
+	program = /usr/local/bin/gpg

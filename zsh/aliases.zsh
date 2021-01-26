@@ -1,9 +1,7 @@
-# Enable tab completion of flags
-source /Users/windymiftah/.rvm/gems/ruby-2.3.0/gems/colorls-1.2.0/lib/tab_complete.sh
-
 alias reload!='. ~/.zshrc'
 
 alias cls='clear' # Good 'ol Clear Screen command
+defaults write com.apple.finder AppleShowAllFiles true; killall Finder 
 
 # chrome CORS off
 alias cors-off='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
@@ -32,3 +30,7 @@ alias lsg="ls --git-status"
 alias llg="ll --git-status"
 alias ldg="ld --git-status"
 alias lag="la --git-status"
+
+# Show / Hide hidden files
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'

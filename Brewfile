@@ -1,10 +1,11 @@
 cask_args appdir: '/Applications'
 
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'drug/ddev'
 
 # Binaries
 brew 'awscli'
@@ -30,37 +31,30 @@ brew 'haproxy'
 brew 'imagemagick'
 brew 'mongodb'
 brew 'mysql'
-brew 'mysql'
-brew 'node'
-brew 'nodenv'
+brew 'rbenv'
+brew 'nvm'
 brew 'openssl'
 brew 'redis'
 brew 'yarn'
+brew 'ddev'
 
 
 # Apps
 cask 'phantomjs'
-cask 'aerial'
+cask 'item2' 
 cask 'alfred'
 cask 'caffeine'
 cask 'discord'
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
-cask 'github'
-cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'gpg-suite'
-cask 'hyper'
 cask 'imageoptim'
 cask 'imagealpha'
-cask 'java8'
 cask 'notion'
 cask 'sequel-pro'
-cask 'skype'
 cask 'slack'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 
 # Quicklook
@@ -80,5 +74,3 @@ cask 'font-hack-nerd-font'
 mas '1Password', id: 1333542190
 mas 'Spark', id: 1176895641
 mas 'The Unarchiver', id: 425424353
-mas 'Unsplash', id: 1284863847
-mas 'WhatsApp', id: 1147396723 

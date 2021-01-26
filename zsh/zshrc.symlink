@@ -2,7 +2,8 @@
 export DOTFILES=$HOME/.dotfiles
 
 # Source zplug manager (https://github.com/zplug/zplug)
-source "$HOME/.zplug/init.zsh"
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
@@ -41,7 +42,10 @@ done
 unset config_files
 
 #Enable tab completion for flags
-# source ~/.rvm/gems/ruby-2.3.0/bin/colorls/tab_complete.sh
+eval "$(rbenv init -)"
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+
 
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
@@ -100,3 +104,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+#Spacheship init
+eval "$(starship init zsh)"
